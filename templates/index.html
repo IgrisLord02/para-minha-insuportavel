@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Nosso Amor ❤️</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="hero">
+    <div class="overlay">
+        <h1>Feliz Dia dos Namorados ❤️</h1>
+        <p>Você me faz melhor todos os dias</p>
+    </div>
+</header>
+
+<section class="section">
+    <h2>Nossa História</h2>
+
+    <div class="card">Você me faz melhorar como pessoa todos os dias ❤️</div>
+    <div class="card">A vida é mais bonita com você ao meu lado</div>
+    <div class="card">Eu te amo mais do que palavras conseguem dizer</div>
+</section>
+
+<section class="section">
+    <h2>Nossos Momentos 📸</h2>
+
+    <div class="carousel-wrapper">
+        <div class="carousel">
+
+            <!-- IMAGENS 1 -->
+            <img src="{{ url_for('static', filename='images/foto01.jpeg') }}">
+            <img src="{{ url_for('static', filename='images/foto02.jpeg') }}">
+            <img src="{{ url_for('static', filename='images/foto03.jpeg') }}">
+            <img src="{{ url_for('static', filename='images/foto04.jpeg') }}">
+            <img src="{{ url_for('static', filename='images/foto05.jpeg') }}">
+            <img src="{{ url_for('static', filename='images/foto06.jpeg') }}">
+            <img src="{{ url_for('static', filename='images/foto07.jpeg') }}">
+            <img src="{{ url_for('static', filename='images/foto08.jpeg') }}">
+            <img src="{{ url_for('static', filename='images/foto09.jpeg') }}">
+            <img src="{{ url_for('static', filename='images/foto10.jpeg') }}">
+
+            <!-- IMAGENS 2 (loop infinito) -->
+            <img src="{{ url_for('static', filename='images/foto01.jpeg') }}">
+            <img src="{{ url_for('static', filename='images/foto02.jpeg') }}">
+            <img src="{{ url_for('static', filename='images/foto03.jpeg') }}">
+            <img src="{{ url_for('static', filename='images/foto04.jpeg') }}">
+            <img src="{{ url_for('static', filename='images/foto05.jpeg') }}">
+            <img src="{{ url_for('static', filename='images/foto06.jpeg') }}">
+            <img src="{{ url_for('static', filename='images/foto07.jpeg') }}">
+            <img src="{{ url_for('static', filename='images/foto08.jpeg') }}">
+            <img src="{{ url_for('static', filename='images/foto09.jpeg') }}">
+            <img src="{{ url_for('static', filename='images/foto10.jpeg') }}">
+
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Nossos Vídeos 🎥</h2>
+
+    <div class="carousel-wrapper">
+        <div class="carousel">
+
+            <video controls src="{{ url_for('static', filename='videos/video01.mp4') }}"></video>
+            <video controls src="{{ url_for('static', filename='videos/video02.mp4') }}"></video>
+            <video controls src="{{ url_for('static', filename='videos/video03.mp4') }}"></video>
+            <video controls src="{{ url_for('static', filename='videos/video04.mp4') }}"></video>
+            <video controls src="{{ url_for('static', filename='videos/video05.mp4') }}"></video>
+            <video controls src="{{ url_for('static', filename='videos/video06.mp4') }}"></video>
+
+        </div>
+    </div>
+</section>
+
+<!-- 🎵 MÚSICA -->
+<audio id="musica" loop autoplay>
+    <source src="{{ url_for('static', filename='music/musica.mp3') }}" type="audio/mp3">
+</audio>
+
+<!-- BOTÃO MÚSICA -->
+<button class="music-btn" onclick="document.getElementById('musica').play()">
+    🎵 Nossa Música ❤️
+</button>
+
+<!-- 🔊 VOLUME -->
+<div class="volume-control">
+    <label>🔊 Volume</label>
+    <input type="range" min="0" max="100" value="50" id="volumeSlider">
+</div>
+
+<!-- SCRIPT DO VOLUME -->
+<script>
+const musica = document.getElementById("musica");
+const slider = document.getElementById("volumeSlider");
+
+musica.volume = 0.5;
+
+slider.addEventListener("input", function () {
+    musica.volume = this.value / 100;
+});
+</script>
+
+</body>
+</html>
