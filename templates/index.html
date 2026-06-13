@@ -44,7 +44,7 @@
             <img src="{{ url_for('static', filename='images/foto09.jpeg') }}">
             <img src="{{ url_for('static', filename='images/foto10.jpeg') }}">
 
-            <!-- IMAGENS 2 (loop infinito) -->
+            <!-- IMAGENS 2 -->
             <img src="{{ url_for('static', filename='images/foto01.jpeg') }}">
             <img src="{{ url_for('static', filename='images/foto02.jpeg') }}">
             <img src="{{ url_for('static', filename='images/foto03.jpeg') }}">
@@ -64,8 +64,17 @@
     <h2>Nossos Vídeos 🎥</h2>
 
     <div class="carousel-wrapper">
-        <div class="carousel">
+        <div class="video-carousel">
 
+            <!-- VÍDEOS 1 -->
+            <video controls src="{{ url_for('static', filename='videos/video01.mp4') }}"></video>
+            <video controls src="{{ url_for('static', filename='videos/video02.mp4') }}"></video>
+            <video controls src="{{ url_for('static', filename='videos/video03.mp4') }}"></video>
+            <video controls src="{{ url_for('static', filename='videos/video04.mp4') }}"></video>
+            <video controls src="{{ url_for('static', filename='videos/video05.mp4') }}"></video>
+            <video controls src="{{ url_for('static', filename='videos/video06.mp4') }}"></video>
+
+            <!-- VÍDEOS 2 (LOOP INFINITO) -->
             <video controls src="{{ url_for('static', filename='videos/video01.mp4') }}"></video>
             <video controls src="{{ url_for('static', filename='videos/video02.mp4') }}"></video>
             <video controls src="{{ url_for('static', filename='videos/video03.mp4') }}"></video>
@@ -93,7 +102,6 @@
     <input type="range" min="0" max="100" value="50" id="volumeSlider">
 </div>
 
-<!-- SCRIPT DO VOLUME -->
 <script>
 const musica = document.getElementById("musica");
 const slider = document.getElementById("volumeSlider");
