@@ -54,11 +54,14 @@ body {
     border-radius: 10px;
 }
 
-/* CARROSSEL */
+/* WRAPPER DOS CARROSSÉIS */
 .carousel-wrapper {
     overflow: hidden;
+    width: 100%;
+    position: relative;
 }
 
+/* CARROSSEL DE FOTOS */
 .carousel {
     display: flex;
     gap: 20px;
@@ -66,19 +69,48 @@ body {
     animation: scroll 25s linear infinite;
 }
 
-.carousel img,
-.carousel video {
+/* CARROSSEL DE VÍDEOS */
+.video-carousel {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: scroll 40s linear infinite;
+}
+
+/* FOTOS */
+.carousel img {
     width: 350px;
     height: 450px;
     object-fit: cover;
     border-radius: 15px;
     border: 2px solid red;
+    flex-shrink: 0;
+}
+
+/* VÍDEOS */
+.video-carousel video {
+    width: 350px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 2px solid red;
+    flex-shrink: 0;
 }
 
 /* ANIMAÇÃO */
 @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* PAUSAR AO PASSAR O MOUSE */
+.carousel:hover,
+.video-carousel:hover {
+    animation-play-state: paused;
 }
 
 /* BOTÃO MÚSICA */
@@ -111,6 +143,8 @@ body {
     transform: scale(1.1);
     box-shadow: 0 0 30px rgba(255, 0, 0, 0.9);
 }
+
+/* CONTROLE DE VOLUME */
 .volume-control {
     position: fixed;
     bottom: 90px;
